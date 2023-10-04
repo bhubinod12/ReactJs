@@ -1,0 +1,60 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Counter!!!!</title>
+    <!-- Algorithm to efficiently manipulate your UI -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- React DOM=> Uses react to update the DOM  -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- transpiler -> JSX into javascript -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <style>
+        .counter {
+            border-bottom:2px solid gray;
+        }
+    </style>
+    <div id = 'root'></div>
+    <script type = 'text/babel'>
+
+        function Counter(props) {
+            let [count, setCount] = React.useState(0);
+            function handleIncrement () {
+                setCount(count+1);
+            }
+            function handleDecrement () {
+                if (count > 0) {
+                    setCount(count-1);
+                }
+            }
+                return (
+                    <div className = 'counter'>
+                        <h2>Counter Number: {props.index}</h2>
+                        <button onClick = {handleIncrement}>+</button>
+                        <p>{count}</p>
+                        <button onClick = {handleDecrement}>-</button>
+                        <br/>
+                        <br/>
+                    </div>
+                )
+        }
+        function ParrentCounter () {
+            return (
+                <div>
+                    <Counter index = {1} value = {1}></Counter>
+                    <Counter index = {2} value = {2}></Counter>
+                    <Counter index = {3} value = {3}></Counter>
+                </div>
+            )
+        }
+        let rootElement = ReactDOM.createRoot(document.getElementById('root'));
+        rootElement.render(<ParrentCounter></ParrentCounter>);
+        
+    </script>
+    
+</body>
+</html>

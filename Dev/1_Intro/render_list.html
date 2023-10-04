@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Render List</title>
+     <!-- Algorithm to efficiently manipulate your UI -->
+     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+     <!-- React DOM=> Uses react to update the DOM  -->
+     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+     <!-- transpiler -> JSX into javascript -->
+     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id = 'root'></div>
+    <script type="text/babel">
+        let stationaryList = ['pen', 'pencil', 'ink', 'Ruler']
+        let listArr = [];
+        for (let i = 0; i < stationaryList.length; i++) {
+            let item = stationaryList[i];
+            // console.log(item);
+            console.log(`I am here ${item}`);
+            let listItem = <li>{item}</li>;
+            listArr.push(listItem);
+            // console.log(listArr);
+        }
+        console.log(listArr);
+        // function List () {
+        //     return <ul>
+        //         // {stationaryList.map((item) => {
+        //         //     return <li>{item}</li>
+        //         // })}
+        //         {listArr}
+        //     </ul>
+        // }
+        function List () {
+            return (
+                <div>
+                    <h2>List items</h2>
+                    <ul>{listArr}</ul>
+                </div>
+            )
+        }
+        function Hello () {
+            return <h1>Hello React, I am here to learn and use !!!</h1>
+        }
+        let rootElement = ReactDOM.createRoot(document.getElementById('root'));
+        rootElement.render(<List/>);
+    </script>
+    
+</body>
+</html>

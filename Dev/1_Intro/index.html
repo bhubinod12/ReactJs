@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Algorithm to efficiently manipulate your UI -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- React DOM=> Uses react to update the DOM  -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- transpiler -> JSX into javascript -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        .Hii{
+            background-color: aquamarine;
+        }
+        .Hii h1{
+            font-size: 1.2rem;
+            color: blueviolet;
+
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- The whole application lives inside the root container -->
+    <div id="root"></div>
+
+    <!-- Single Page application: js -->
+
+    <script type="text/babel">
+        
+        // Component: is a function that returns HTML:
+        
+        // Just to print Welcome React
+        // function App() {
+        //     return 'Welcome React!!!!!'
+        // }
+    function Greeting (props) {
+        return <h2>Hello {props.name}</h2>
+    }
+        // Props
+        // function App(props) {
+        //     // let something = props.value;
+        //     let {name, age} = props;
+        //     let answer = 'Thanks';
+        //     return (
+        //         <div>
+        //             <Greeting name = {'Binod'}> </Greeting>
+        //             <h3>{answer} {name}, Nice to meet you!!!</h3>
+        //         </div>
+        //     )
+        // }
+        function HELLO (props) {
+            var name = props.name;
+            return <h1>Hello Babel {name}</h1>
+        }
+        function BYE (props) {
+            return <h1>BYE {props.name}</h1>
+        }
+        function HELLOPARENT() {
+            return (
+                <div>
+                <HELLO- name = 'Binod'></HELLO->
+                <HELLO name = 'Hirdesh'></HELLO>
+                <HELLO name = 'Ranjeet'></HELLO>
+                <HELLO name = 'Tarun'></HELLO>
+                <BYE name = 'All'></BYE>
+                </div>
+            )
+        }
+        // a method in ReactDOM -> puts the returned HTML from component in root element
+        let rootElement = ReactDOM.createRoot(document.getElementById('root'));
+        // rootElement.render(<App name = {'Binod'} age = {36}> </App>)
+        rootElement.render(<HELLOPARENT/>)
+
+    </script>
+</body>
+</html>
+
+<!-- 1) Compoment: Components are independent and reusable bits of code.
+They serve the same purpose as JavaScript functions, but work in isolation and return XML.
+2) Props: properties passed to a component.
+3) JSX-> JavaScript and XML.
+4) You create bigger components using smaller one. 
+-->
+
